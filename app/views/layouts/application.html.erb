@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+  <!-- this built-in function is a helper. it relies on the definition of a page title
+  using provide in each view -->
+  <title><%= full_title(yield(:title)) %></title>
+  <!-- this line uses the built-in Rails function stylesheet_link_tag to include
+        application.css for all media types -->
+  <!-- where are the parentheses? they are optional in Ruby -->
+  <!-- the media argument is a hash but braces are optional when hashes are the last argument
+        in a function call -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
